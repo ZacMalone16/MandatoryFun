@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MandatoryFun</string>
+    <string name="welcome_to_the_app">Welcome to the App!</string>
+    <string name="spelling">Spelling</string>
+    <string name="vocabulary">Vocabulary</string>
+    <string name="report">Report</string>
+    <string name="choose_your_test">Choose Your Test</string>
+</resources>

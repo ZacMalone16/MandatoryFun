@@ -29,7 +29,7 @@
     <Button
         android:id="@+id/buttonVocabulary"
         android:layout_width="match_parent"
-        android:layout_height="113dp"
+        android:layout_height="103dp"
         android:layout_below="@id/buttonSpelling"
         android:text="@string/vocabulary"
         android:textAlignment="center"
@@ -38,7 +38,7 @@
     <Button
         android:id="@+id/buttonReport"
         android:layout_width="match_parent"
-        android:layout_height="128dp"
+        android:layout_height="103dp"
         android:layout_below="@id/buttonVocabulary"
         android:text="@string/report"
         android:textAlignment="center"

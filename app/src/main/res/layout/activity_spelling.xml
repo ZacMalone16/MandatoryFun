@@ -28,7 +28,7 @@
     <Button
         android:id="@+id/buttonSpellingTest"
         android:layout_width="match_parent"
-        android:layout_height="113dp"
+        android:layout_height="103dp"
         android:layout_below="@id/buttonSpellingChoiceTest"
         android:text="@string/vocabulary"
         android:textAlignment="center"

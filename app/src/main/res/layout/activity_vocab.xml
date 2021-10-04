@@ -4,13 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:textAlignment="center"
     tools:context=".Vocab">
 
     <TextView
         android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Vocab"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="185dp" />
+
+    <TextView
+        android:id="@+id/textViewVocabWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vocab"
-        tools:layout_editor_absoluteX="179dp"
-        tools:layout_editor_absoluteY="259dp" />
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="109dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/textViewTestingText3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textViewTestingText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="109dp"
+        android:layout_marginTop="83dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/textViewVocabWord"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 </androidx.constraintlayout.widget.ConstraintLayout>

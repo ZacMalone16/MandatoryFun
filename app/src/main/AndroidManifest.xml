@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MandatoryFun">
         <activity
-            android:name=".Report"
+            android:name=".ControlPanel"
+            android:exported="true" />
+        <activity
+            android:name=".Levels"
+            android:exported="true" />
+        <activity
+            android:name=".SpellingChoice"
             android:exported="true" />
         <activity
             android:name=".Vocab"

@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/PS972JG/AndroidStudioProjects/MandatoryFun/app/src/main/res/layout/activity_control_panel.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/PS972JG/AndroidStudioProjects/MandatoryFun/app/src/main/res/layout/activity_levels.xml" value="0.23052536231884058" />
         <entry key="..\:/Users/PS972JG/AndroidStudioProjects/MandatoryFun/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/PS972JG/AndroidStudioProjects/MandatoryFun/app/src/main/res/layout/activity_report.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PS972JG/AndroidStudioProjects/MandatoryFun/app/src/main/res/layout/activity_spelling.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PS972JG/AndroidStudioProjects/MandatoryFun/app/src/main/res/layout/activity_spelling_choice.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PS972JG/AndroidStudioProjects/MandatoryFun/app/src/main/res/layout/activity_vocab.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PS972JG/AndroidStudioProjects/MandatoryFun/app/src/main/res/layout/level_row.xml" value="0.33" />
       </map>
     </option>
   </component>

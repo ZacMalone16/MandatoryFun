@@ -13,7 +13,6 @@
         android:layout_marginTop="56dp"
         android:text="@string/welcome_to_the_app"
         android:textAlignment="center"
-
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <Button
@@ -24,24 +23,36 @@
         android:layout_marginTop="65dp"
         android:text="@string/spelling"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#040404" />
+
+    <Button
+        android:id="@+id/buttonSpellingMulti"
+        android:layout_width="match_parent"
+        android:layout_height="103dp"
+        android:layout_below="@id/buttonSpelling"
+        android:text="Spelling Choice "
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#070707" />
 
     <Button
         android:id="@+id/buttonVocabulary"
         android:layout_width="match_parent"
         android:layout_height="103dp"
-        android:layout_below="@id/buttonSpelling"
+        android:layout_below="@id/buttonSpellingMulti"
         android:text="@string/vocabulary"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#040404" />
     <Button
-        android:id="@+id/buttonReport"
+        android:id="@+id/buttoncontrol_panel"
         android:layout_width="match_parent"
         android:layout_height="103dp"
         android:layout_below="@id/buttonVocabulary"
-        android:text="@string/report"
+        android:text="@string/control_panel"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#040404" />
+
 
 </RelativeLayout>

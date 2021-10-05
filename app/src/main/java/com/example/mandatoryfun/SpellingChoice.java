@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class Vocab extends AppCompatActivity {
+public class SpellingChoice extends AppCompatActivity {
 
     TextView testText;
     TextView testText2;
@@ -14,17 +14,13 @@ public class Vocab extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vocab);
-
-        testText = findViewById(R.id.textViewVocabWord);
-        testText2 = findViewById(R.id.textViewTestingText3);
-
+        setContentView(R.layout.activity_spelling_choice);
         Intent intent = getIntent();
-        testText = findViewById(R.id.textViewVocabWord);
+        testText = findViewById(R.id.textViewChoiceWord);
         testText2 = findViewById(R.id.textViewTestingText1);
 
         String test = intent.getStringExtra("word");
         testText.setText(test);
-        testText2.setText("Test Vocab");
+        testText2.setText("Test Choices");
     }
 }

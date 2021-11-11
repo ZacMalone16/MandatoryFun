@@ -15,9 +15,9 @@ import androidx.appcompat.app.AlertDialog;
 public class Spelling extends AppCompatActivity {
     TextView testText;
     TextView testText2;
-    EditText userAnswer/*, date, numCorrect, numMissed*/;
-    Button insert, view;
-    DB_spelling DB;
+    //EditText userAnswer/*, date, numCorrect, numMissed*/;
+    //Button insert, view;
+    //DB_spelling DB;
 
 
     @Override
@@ -34,51 +34,6 @@ public class Spelling extends AppCompatActivity {
         testText.setText(test);
         testText2.setText("Test Typed Spelling");
 
-        userAnswer = findViewById(R.id.userAnswer);
-        insert = findViewById(R.id.btnInsert);
-        view = findViewById(R.id.btnView);
-        DB = new DB_spelling(this);
 
-        insert.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String answerTXT = userAnswer.getText().toString();
-               /* Integer dateTXT = Integer.parseInt(String.valueOf(date.getText()));
-                Integer ncTXT = Integer.parseInt(String.valueOf(numCorrect.getText()));
-                Integer nmTXT = Integer.parseInt(String.valueOf(numMissed.getText()));*/
-
-                Boolean checkinsertdata = DB.insertuseranswer(answerTXT /*, dateTXT, ncTXT, nmTXT*/);
-                if(checkinsertdata==true)
-                    Toast.makeText(Spelling.this, "New Entry Inserted", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(Spelling.this, "New Entry Not Inserted", Toast.LENGTH_SHORT).show();
-            }        });
-
-
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Cursor res = DB.getdata();
-                if(res.getCount()==0){
-                    Toast.makeText(Spelling.this, "No Entry Exists", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                StringBuffer buffer = new StringBuffer();
-                while(res.moveToNext()){
-                    buffer.append("Answer :"+res.getString(0)+"\n");
-                   /* buffer.append("Date :"+res.getString(1)+"\n");
-                    buffer.append("Number Correct :"+res.getString(2)+"\n");
-                    buffer.append("Number Missed :"+res.getString(3)+"\n");*/
-
-                }
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(Spelling.this);
-                builder.setCancelable(true);
-                builder.setTitle("User Entries");
-                builder.setMessage(buffer.toString());
-                builder.show();
-
-            }
-        });
     }
 }

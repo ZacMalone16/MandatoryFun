@@ -7,6 +7,13 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.content.Intent;
+import android.database.Cursor;
+
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+import androidx.appcompat.app.AlertDialog;
 
 public class MainActivity extends AppCompatActivity {
     private Button spellingType;
@@ -14,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Button vocab;
     private Button control;
     public static final String EXTRA_TYPE = "com.example.mandatoryfun.EXTRA_TYPE";
-
+    //DB_spelling DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         spellingChoice = (Button) findViewById(R.id.buttonSpellingMulti);
         vocab = (Button) findViewById(R.id.buttonVocabulary);
         control = (Button) findViewById(R.id.buttoncontrol_panel);
+        //DB = new DB_spelling(this);
 
         spellingType.setBackgroundColor(Color.GREEN);
         spellingChoice.setBackgroundColor(Color.CYAN);

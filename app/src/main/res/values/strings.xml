@@ -1,34 +1,9 @@
 <resources>
     <string name="app_name">MandatoryFun</string>
-    <string name="welcome_to_the_app">Welcome to the App!</string>
+    <string name="welcome_to_the_app">Welcome To The App!</string>
     <string name="spelling">Spelling Typed</string>
     <string name="vocabulary">Vocabulary</string>
     <string name="report">Report</string>
-    <string name="choose_your_test">Choose Your Test</string>
+    <string name="choose_your_test">Pick The Correct Spelling</string>
     <string name="control_panel">Control Panel</string>
-
-    <string-array name="TestOfTen">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-    </string-array>
-    <string-array name="Test2OfTen">
-        <item>Test1</item>
-        <item>Test2</item>
-        <item>Test3</item>
-        <item>Test4</item>
-        <item>Test5</item>
-        <item>Test6</item>
-        <item>Test7</item>
-        <item>Test8</item>
-        <item>Test9</item>
-        <item>Test10</item>
-    </string-array>
 </resources>

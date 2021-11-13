@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mandatoryfun">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,7 +16,7 @@
             android:exported="true" />
         <activity
             android:name=".Levels"
-            android:exported="true" />
+            android:exported="true" android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".SpellingChoice"
             android:exported="true" />

@@ -34,8 +34,22 @@ public class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.MyViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.score.setText(data2[position]);
-        holder.levelNumber.setText(data1[position]);
+        DBHelper db = new DBHelper(context);
+        if(testType.equals("typed")) {
+            Integer value = db.choiceStar(position);
+            holder.score.setText("Correct:" + value.toString());
+            holder.levelNumber.setText(data1[position]);
+        }
+        else if(testType.equals("choice")){
+            Integer value = db.spellStar(position);
+            holder.score.setText("Correct:" + value.toString());
+            holder.levelNumber.setText(data1[position]);
+        }
+        else{
+            Integer value = db.vocabStar(position);
+            holder.score.setText("Correct:" + value.toString());
+            holder.levelNumber.setText(data2[position]);
+        }
     }
 
     @Override
@@ -54,6 +68,7 @@ public class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.MyViewHolder
             levelNumber = view.findViewById(R.id.buttonLevelSelect);
 
             itemView.findViewById(R.id.buttonLevelSelect).setOnClickListener(new View.OnClickListener() {
+
                 @Override
                 public void onClick(View view) {
                     if (testType.equals("typed")) {

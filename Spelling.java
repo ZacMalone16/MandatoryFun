@@ -15,10 +15,10 @@ import androidx.appcompat.app.AlertDialog;
 public class Spelling extends AppCompatActivity {
     TextView testText;
     TextView testText2;
-    EditText userAnswer/*, date, numCorrect, numMissed*/;
+    EditText userAnswer;
     Button insert, view;
     DB_spelling DB;
-
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class Spelling extends AppCompatActivity {
         testText = findViewById(R.id.textViewSpellingWord);
         testText2 = findViewById(R.id.textViewTestingText2);
 
-        Intent intent = getIntent();
+        intent = getIntent();
         testText = findViewById(R.id.textViewSpellingWord);
         String test = intent.getStringExtra("word");
         testText.setText(test);
@@ -43,11 +43,9 @@ public class Spelling extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String answerTXT = userAnswer.getText().toString();
-               /* Integer dateTXT = Integer.parseInt(String.valueOf(date.getText()));
-                Integer ncTXT = Integer.parseInt(String.valueOf(numCorrect.getText()));
-                Integer nmTXT = Integer.parseInt(String.valueOf(numMissed.getText()));*/
 
-                Boolean checkinsertdata = DB.insertuseranswer(answerTXT /*, dateTXT, ncTXT, nmTXT*/);
+
+                Boolean checkinsertdata = DB.insertuseranswer(answerTXT);
                 if(checkinsertdata==true)
                     Toast.makeText(Spelling.this, "New Entry Inserted", Toast.LENGTH_SHORT).show();
                 else
@@ -66,9 +64,6 @@ public class Spelling extends AppCompatActivity {
                 StringBuffer buffer = new StringBuffer();
                 while(res.moveToNext()){
                     buffer.append("Answer :"+res.getString(0)+"\n");
-                   /* buffer.append("Date :"+res.getString(1)+"\n");
-                    buffer.append("Number Correct :"+res.getString(2)+"\n");
-                    buffer.append("Number Missed :"+res.getString(3)+"\n");*/
 
                 }
 

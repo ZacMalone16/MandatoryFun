@@ -12,7 +12,7 @@ public class DB_spelling extends SQLiteOpenHelper{
     public DB_spelling(Context context) {
         super(context, "Spelling.db", null, 1);
     }
-
+    ContentValues contentValues;
     @Override
     public void onCreate(SQLiteDatabase DB) {
         DB.execSQL("create Table userInput(userAnswer TEXT primary key /*, date INTEGER, numCorrect INTEGER, numMissed INTEGER*/)");
@@ -26,11 +26,9 @@ public class DB_spelling extends SQLiteOpenHelper{
     public Boolean insertuseranswer(String userAnswer /*, Integer date, Integer numCorrect, Integer numMissed*/ )
     {
         SQLiteDatabase DB = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
+        contentValues = new ContentValues();
         contentValues.put("userAnswer", userAnswer);
-       /* contentValues.put("date", date);
-        contentValues.put("numCorrect", numCorrect);
-        contentValues.put("numMissed", numMissed);*/
+
         long result=DB.insert("userInput", null, contentValues);
         if(result==-1) {
             return false;

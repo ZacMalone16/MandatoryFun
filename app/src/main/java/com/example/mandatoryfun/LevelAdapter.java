@@ -38,17 +38,17 @@ public class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.MyViewHolder
         if(testType.equals("typed")) {
             Integer value = db.choiceStar(position);
             holder.score.setText("Correct:" + value.toString());
-            holder.levelNumber.setText(data1[position]);
+            holder.levelNumber.setText("Level " + data1[position]);
         }
         else if(testType.equals("choice")){
             Integer value = db.spellStar(position);
             holder.score.setText("Correct:" + value.toString());
-            holder.levelNumber.setText(data1[position]);
+            holder.levelNumber.setText("Level " + data1[position]);
         }
         else{
             Integer value = db.vocabStar(position);
             holder.score.setText("Correct:" + value.toString());
-            holder.levelNumber.setText(data2[position]);
+            holder.levelNumber.setText("Level " + data2[position]);
         }
     }
 

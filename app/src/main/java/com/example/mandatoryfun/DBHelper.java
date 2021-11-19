@@ -270,4 +270,14 @@ public class DBHelper extends SQLiteOpenHelper {
 
         db.update(TABLE_NAME2, cv, "ID = ?", new String[] {"" + results0});
     }
+    public boolean deleteSpelling(String word)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME1, "ID + = ?", new String[]{word}) > 0;
+    }
+    public boolean deleteVocab(String word)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME2, "ID + = ?", new String[]{word}) > 0;
+    }
 }

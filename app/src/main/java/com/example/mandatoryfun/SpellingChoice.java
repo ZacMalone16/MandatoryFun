@@ -203,7 +203,7 @@ public class SpellingChoice extends AppCompatActivity {
         words.add(String.valueOf(charArray2));
 
         char[] charArray3 = text.toCharArray();
-        if (charArray2[length / 2] != 'i')
+        if (charArray3[length / 2] != 'i')
             charArray3[length / 2] = 'i';
         else
             charArray3[length / 2] = 'o';

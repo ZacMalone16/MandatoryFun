@@ -16,8 +16,10 @@ import java.util.Locale;
 public class ControlPanel extends AppCompatActivity {
     private Button spellingButton;
     private Button vocabButton;
+    private Button spellingRemove;
+    private Button vocabRemove;
     private TextView spellingWord;
-    private TextView VocabWord;
+    private TextView vocabWord;
 
     String url;
 
@@ -28,9 +30,12 @@ public class ControlPanel extends AppCompatActivity {
         spellingButton = findViewById(R.id.buttonCPSpellAdd);
         vocabButton = findViewById(R.id.buttonCPVocabAdd);
         spellingWord = findViewById(R.id.editTextCPSpellWordtext);
-        VocabWord = findViewById(R.id.editTextCPVocabWordtext);
+        vocabWord = findViewById(R.id.editTextCPVocabWordtext);
+        spellingRemove = findViewById(R.id.buttonCPSpellDelete);
+        vocabRemove = findViewById(R.id.buttonCPVocabDelete);
 
-
+        spellingRemove.setVisibility(View.GONE);
+        vocabRemove.setVisibility(View.GONE);
 
         spellingButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,20 +62,36 @@ public class ControlPanel extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (VocabWord.getText().length() > 0) {
-                    DictionaryHelper dh = new DictionaryHelper(ControlPanel.this, false, VocabWord.getText().toString().toLowerCase());
-                    url = dictionaryEntries(VocabWord.getText().toString());
+                if (vocabWord.getText().length() > 0) {
+                    DictionaryHelper dh = new DictionaryHelper(ControlPanel.this, false, vocabWord.getText().toString().toLowerCase());
+                    url = dictionaryEntries(vocabWord.getText().toString());
                     dh.execute(url);
 
                     Toast.makeText(ControlPanel.this, "Added!",
                             Toast.LENGTH_LONG).show();
-                    VocabWord.setText("");
+                    vocabWord.setText("");
                 }
                 else {
                     Toast.makeText(ControlPanel.this, "Not Added",
                             Toast.LENGTH_LONG).show();
                     spellingWord.setText("");
                 }
+            }
+        });
+        spellingRemove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DBHelper db = new DBHelper(ControlPanel.this);
+                db.getWritableDatabase();
+                db.deleteSpelling(spellingWord.getText().toString());
+            }
+        });
+        vocabRemove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DBHelper db = new DBHelper(ControlPanel.this);
+                db.getWritableDatabase();
+                db.deleteSpelling(vocabWord.getText().toString());
             }
         });
     }

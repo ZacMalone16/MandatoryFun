@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="103dp"
         android:layout_below="@id/buttonSpelling"
-        android:text="Spelling Choice"
+        android:text="Correct Spelling"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#070707" />
 

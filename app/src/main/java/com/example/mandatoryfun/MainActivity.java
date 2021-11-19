@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private Button spellingType;
@@ -31,27 +32,46 @@ public class MainActivity extends AppCompatActivity {
         spellingChoice.setBackgroundColor(Color.CYAN);
         vocab.setBackgroundColor(Color.YELLOW);
         control.setBackgroundColor(Color.LTGRAY);
+        DBHelper db = new DBHelper(this);
 
-        spellingType.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openSpelling();
-            }
-        });
+            spellingType.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(db.spellCount() > 0) {
+                        openSpelling();
+                    }
+                    else{
+                        Toast.makeText(MainActivity.this, "Please add spelling to the Control Panel!",
+                                Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
 
-        vocab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openVocab();
-            }
-        });
+            spellingChoice.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (db.spellCount() > 0) {
+                        openSpellingChoice();
+                    } else {
+                        Toast.makeText(MainActivity.this, "Please add spelling to the Control Panel!",
+                                Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
 
-        spellingChoice.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openSpellingChoice();
-            }
-        });
+            vocab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(db.vocabCount() > 0) {
+                        openVocab();
+                    }
+                    else {
+                        Toast.makeText(MainActivity.this, "Please add vocabulary to the Control Panel!",
+                                Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+
         control.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

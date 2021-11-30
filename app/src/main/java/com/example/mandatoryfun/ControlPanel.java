@@ -46,8 +46,6 @@ public class ControlPanel extends AppCompatActivity {
                     url = dictionaryEntries(spellingWord.getText().toString());
                     dh.execute(url);
 
-                    Toast.makeText(ControlPanel.this, "Added!",
-                            Toast.LENGTH_LONG).show();
                     spellingWord.setText("");
                 }
                 else{
@@ -67,8 +65,7 @@ public class ControlPanel extends AppCompatActivity {
                     url = dictionaryEntries(vocabWord.getText().toString());
                     dh.execute(url);
 
-                    Toast.makeText(ControlPanel.this, "Added!",
-                            Toast.LENGTH_LONG).show();
+
                     vocabWord.setText("");
                 }
                 else {

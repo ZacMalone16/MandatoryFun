@@ -1,8 +1,13 @@
 package com.example.mandatoryfun;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -102,7 +107,40 @@ public class DictionaryHelper extends AsyncTask<String, Integer, String> {
         }
         catch (JSONException e) {
             e.printStackTrace();
-        }
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle("Definition Error");
+            builder.setIcon(R.drawable.ic_launcher_foreground);
+            builder.setMessage("Please enter a definition for: " + theWord);
+            EditText input = new EditText(builder.getContext());
+            builder.setView(input);
+            builder.setPositiveButton("submit", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
 
+                    String text = input.getText().toString();
+                    Boolean check = DictionaryHelper.this.isSpell;
+                    if (check) {
+                        myDb.insertSpellingData(theWord, date, text, 0, 0);
+                    }
+                    else if (!check){
+                        myDb.insertVocabData(theWord, date, text, 0);
+                    }
+                    else
+                        myDb.insertVocabData(theWord, date, text, 0);
+
+                    Toast.makeText(context, "Added!",
+                            Toast.LENGTH_LONG).show();
+                }
+            });
+            builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(context, "Word Not Added!",
+                            Toast.LENGTH_LONG).show();
+                    dialog.dismiss();
+                }
+            });
+            AlertDialog ad = builder.show();
+        }
     }
 }
